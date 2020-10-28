@@ -11,6 +11,7 @@
 public class Pila {
     private int P[];
     private int Indice;
+    private int valel;
     
     public Pila(int v){
         P=new int[v];
@@ -27,11 +28,15 @@ public class Pila {
     }
     
     public boolean ELIMINAR(){
-        if(Indice!=-1){
-            P[Indice]=0;
-            Indice--;
-            return true;
+        if(Indice==-1){
+            return false;
         }
+        valel=P[Indice];
+        Indice--;
         return false;
-    }       
+    }
+    
+    public int getValorEliminado(){
+        return valel;
+    }
 }
